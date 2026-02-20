@@ -15,6 +15,29 @@ st.markdown("""
     overflow: hidden;
 }
 
+/* ===== BLACK BUTTON STYLE (ALL PAGES) ===== */
+.stButton > button {
+    background-color: #000000;
+    color: white;
+    border-radius: 14px;
+    border: 1px solid #333;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.stButton > button:hover {
+    background-color: #111111;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    border: 1px solid #555;
+}
+
+.stButton > button:active {
+    transform: scale(0.98);
+}
+
 /* ===== SMALL GLOWING MOON ===== */
 .moon {
     position: fixed;
@@ -131,8 +154,7 @@ def show_home_button():
 if st.session_state.page == "home":
 
     st.markdown("""
-    <h1 class="main-title">Happy Birthday 
-Sukriti </h1>
+    <h1 class="main-title">🎉 Happy Birthday Sukriti 🎉</h1>
     <h3 class="sub-title">💌 Open Your Birthday Letters 💌</h3>
     """, unsafe_allow_html=True)
 
@@ -166,7 +188,6 @@ elif st.session_state.page == "letter1":
 
     if st.button("Blow the Candle 🎂"):
         countdown = st.empty()
-
         for i in range(3, 0, -1):
             countdown.markdown(f"# {i}...")
             time.sleep(1)
